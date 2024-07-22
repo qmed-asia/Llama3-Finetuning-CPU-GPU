@@ -126,4 +126,5 @@ lora_config, model = lora_llama(model)
 train(tokenizer, model, lora_config, train_dataset, val_data)
 ```
 
-Feel free to customize the code according to your needs and share your improvements with the community!
+# Extra Remarks
+Prompts are needed for finetuning. Please prepare your own prompts as needed. Refer to the code file.
