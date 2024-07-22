@@ -1,8 +1,11 @@
-# Parameter Efficient Fine-tuning on Local CPUs
+##  Parameter Efficient Fine-tuning on Local CPUs
 
-This repo contains code for the paper {attach link}
+# Setup 
 
-There are 3 main configurations for CPU training.  
+Step 1: In _CPU Finetune/docker/llm/finetune/qlora/cpu/docker/start-qlora-finetuning-on-cpu.sh_, add your Weights and Biases and HuggingFace API Key .
+
+Step 2: Configure AMX and tcmalloc setup
+There are 3 main configurations for CPU training.  Make the follwing adjustments in the shell file in _CPU Finetune/docker/llm/finetune/qlora/cpu/docker/start-qlora-finetuning-on-cpu.sh_
 
 1. ipex-llm + tcmalloc + AMX
 
