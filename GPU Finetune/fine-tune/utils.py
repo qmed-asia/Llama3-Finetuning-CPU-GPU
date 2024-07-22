@@ -30,8 +30,6 @@ def load_llama_instruct():
 
     return model, tokenizer
 
-
-
 def load_data_splits():
     dataset_path = r"xxxxxx.csv"
     file_path = r"xxxxxx.json"
@@ -112,36 +110,12 @@ def generate_test(test,tokenizer):
 
     return test_dataset
 
-def load_llama3():
-    base_model_id = "xxxxxxxxx" # specify the path of the LLM that u wanna use here (can be local path on your PC or model ID from HuggingFace such as "meta-llama/Meta-Llama-3-8B-Instruct")
-    # bnb_config = BitsAndBytesConfig(
-    #     load_in_4bit=True,
-    #     bnb_4bit_use_double_quant=True,
-    #     bnb_4bit_quant_type="nf4",#sym_int4 for CPU
-    #     bnb_4bit_compute_dtype=torch.bfloat16
-    # )
 
-    # model = AutoModelForCausalLM.from_pretrained(base_model_id, quantization_config=bnb_config)
-
-    tokenizer = AutoTokenizer.from_pretrained(base_model_id,add_eos_token=True,add_bos_token=True)
-
-    # return model, tokenizer
-    return tokenizer
 
 def lora_llama(model):
 
     model.gradient_checkpointing_enable()
     model = prepare_model_for_kbit_training(model)
-    ###RUN1 
-    # lora_config = LoraConfig(
-    #     r=16,
-    #     lora_alpha=32,
-    #     lora_dropout=0.05,
-    #     bias="none",
-    #     task_type="CAUSAL_LM",
-    #     target_modules=['up_proj', 'down_proj', 'gate_proj', 'k_proj', 'q_proj', 'v_proj', 'o_proj']
-    # )
-    ###RUN 2
     lora_config = LoraConfig(
         r=16,
         lora_alpha=16,

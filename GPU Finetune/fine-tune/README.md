@@ -1,24 +1,6 @@
-### README
-
 # GPU Fine-Tuning Code for Language Model
 
-This repository contains the code for fine-tuning a large language model (LLM) using GPU. The code utilizes various libraries such as `transformers`, `bitsandbytes`, `peft`, and `trl` to handle model loading, dataset preparation, and training. Below is a brief explanation of the code:
-
-## Dependencies
-
-- `pandas`
-- `json`
-- `os`
-- `torch`
-- `transformers`
-- `datasets`
-- `peft`
-- `bitsandbytes`
-- `trl`
-- `evaluate`
-- `numpy`
-
-Make sure to install these packages using `pip` before running the code.
+This repository contains the code for fine-tuning a large language model (LLM) using GPU.
 
 ## Environment Setup
 
@@ -26,6 +8,20 @@ Set your HuggingFace token as an environment variable:
 ```python
 os.environ["HF_TOKEN"] = 'your_huggingface_token'
 ```
+
+
+## Launch Jobs
+
+1) Add train.csv and val.csv to Llama3-Finetuning-CPU-GPU\GPU Finetune\fine-tune.
+
+2) Setup and run Docker
+
+Step 1: Build the Docker Image:
+
+docker build -t fine-tuning-image .
+
+Step 2: RUn the Docker Image
+docker run --rm -it -v Llama3-Finetuning-CPU-GPU/GPU\ Finetune/fine-tune/:/workspace fine-tuning-image
 
 ## Functions
 
@@ -65,38 +61,6 @@ Configures and applies LoRA (Low-Rank Adaptation) to the model for parameter-eff
 
 Trains the model using the SFT (Supervised Fine-Tuning) Trainer from the `trl` library. The training parameters such as batch size, learning rate, and number of epochs are specified here.
 
-## Usage
-
-1. Load the model and tokenizer:
-    ```python
-    model, tokenizer = load_llama_instruct()
-    ```
-
-2. Prepare the dataset:
-    ```python
-    test_data, val_data, train_data = load_data_splits()
-    ```
-
-3. Format the training and validation data:
-    ```python
-    train_dataset = generate_train_val(train_data, tokenizer)
-    ```
-
-4. Configure LoRA and prepare the model:
-    ```python
-    lora_config, model = lora_llama(model)
-    ```
-
-5. Train the model:
-    ```python
-    train(tokenizer, model, lora_config, train_dataset, val_data)
-    ```
-
-6. Format the test data (optional):
-    ```python
-    test_dataset = generate_test(test_data, tokenizer)
-    ```
-
 ## Notes
 
 - Ensure the paths to the dataset and model are correctly specified.
@@ -108,22 +72,18 @@ Trains the model using the SFT (Supervised Fine-Tuning) Trainer from the `trl` l
 Here's a minimal example to run the fine-tuning process:
 
 ```python
-from your_module import load_llama_instruct, load_data_splits, generate_train_val, lora_llama, train
+from utils import load_data_splits, train, generate_train_val, generate_test
+from utils import load_llama3, lora_llama, train
+from datasets import load_dataset, DatasetDict
+import pandas as pd
 
-# Load model and tokenizer
-model, tokenizer = load_llama_instruct()
+model, tokenizer = load_llama3()
+lora_config, lora_model = lora_llama(model)
 
-# Load and prepare data
-test_data, val_data, train_data = load_data_splits()
+#To preprocess dataset that has been split
+dataset=load_dataset('csv', data_files={'train':'train.csv', 'val':'val.csv'})
 
-# Generate training format
-train_dataset = generate_train_val(train_data, tokenizer)
-
-# Configure and prepare model with LoRA
-lora_config, model = lora_llama(model)
-
-# Train the model
-train(tokenizer, model, lora_config, train_dataset, val_data)
+train(tokenizer,model, lora_config, dataset['train'], dataset['val'])
 ```
 
 # Extra Remarks

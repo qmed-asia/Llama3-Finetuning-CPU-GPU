@@ -1,9 +1,9 @@
 from utils import load_data_splits, train, generate_train_val, generate_test
-from utils import load_llama3, lora_llama, train
+from utils import load_llama_instruct, lora_llama, train
 from datasets import load_dataset, DatasetDict
 import pandas as pd
 
-model, tokenizer = load_llama3()
+model, tokenizer = load_llama_instruct()
 lora_config, lora_model = lora_llama(model)
 
 # # To split dataset
