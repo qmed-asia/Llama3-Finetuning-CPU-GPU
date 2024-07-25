@@ -36,7 +36,7 @@ The following is our results:
 |RAM Usage (MB)  |       N/A        | Fluctuates  |      135000      |       167000       |
 
 #### Remarks:
-*1. All setups are using BF16.
+1. All setups are using BF16.
 2. The unit used for all the time variables is "minutes (mins)."
 3. Time/epoch = Time per epoch (mins)
 4. Train Epoch = Training Epoch
@@ -44,7 +44,7 @@ The following is our results:
 6. Param = Parameters
 7. Trans = Transformers
 8. Ipex = Ipex-llm
-9. tcmal = tcmalloc*
+9. tcmal = tcmalloc
 
 
 ## Custom Summarisation Dataset Structure
