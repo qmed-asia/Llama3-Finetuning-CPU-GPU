@@ -18,14 +18,14 @@ wandb login $WANDB_API_KEY
 # Set the Hugging Face token
 HF_TOKEN="--auth-token yyyyyy"
 
-if [ -d "/home/qmed-intel/models/llama_instruct" ];
+if [ -d "/xxxxxx/xxxxxx" ];
 then
-  MODEL_PARAM="--repo-id-or-model-path "/home/qmed-intel/models/llama_instruct" "  # otherwise, default to download from HF repo
+  MODEL_PARAM="--repo-id-or-model-path "xxxxxxxxx" "  # otherwise, default to download from HF repo
 fi
 
-if [ -d "/home/qmed-intel/Desktop/qmed_summarisation_data" ];
+if [ -d "/xxxxxx/xxxxxx" ];
 then
-  DATA_PARAM="--dataset /home/qmed-intel/Desktop/xxxxxxxxx" # otherwise, default to download from HF dataset
+  DATA_PARAM="--dataset xxxxxx/xxxxxx" # otherwise, default to download from HF dataset
 fi
 
 if [ "$STANDALONE_DOCKER" = "TRUE" ]

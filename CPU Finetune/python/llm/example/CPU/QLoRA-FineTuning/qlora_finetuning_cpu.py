@@ -42,10 +42,10 @@ from common.utils import Prompter, get_train_val_data
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Predict Tokens using `generate()` API for Llama2 model')
-    parser.add_argument('--repo-id-or-model-path', type=str, default="/home/qmed-intel/models/meta-llama/Meta-Llama-3-8B-Instruct",
+    parser.add_argument('--repo-id-or-model-path', type=str, default="xxxxxx",
                         help='The huggingface repo id for the Llama2 (e.g. `meta-llama/Llama-2-7b-hf` and `meta-llama/Llama-2-13b-chat-hf`) to be downloaded'
                              ', or the path to the huggingface checkpoint folder')
-    parser.add_argument('--dataset', type=str, default="/home/qmed-intel/Desktop/dataset_name")
+    parser.add_argument('--dataset', type=str, default="xxxxxx")
 
     args = parser.parse_args()
     model_path = args.repo_id_or_model_path
@@ -112,7 +112,7 @@ if __name__ == "__main__":
     epoch_time_callback = EpochTimeCallback()
 
     ## Wandb
-    wandb.init(project="NORA Intel", entity="qmed-asia")
+    wandb.init(project="xxxxxx", entity="xxxxxx")
     trainer = SFTTrainer(
         model=model,
         train_dataset=dataset["train"],
