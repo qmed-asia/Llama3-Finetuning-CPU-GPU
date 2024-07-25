@@ -27,24 +27,23 @@ The GPU fine-tuning process utilizes `NVIDIA A100 GPUs` from Microsoft Azure, wh
    
 The following is our results:
 
-|     Param      | Trans (A100 GPU) |     Ipex    | Ipex-llm + tcmal | Ipex + tcmal + AMX |
-|----------------|------------------|-------------|------------------|--------------------|
-|Time/epoch      |       7.5        |     77.6    |       74.8       |        11.6        |
-|Train Epoch     |        8         |      8      |        8         |         8          |
-|Total Train Time|       60.0       |    621.0    |      598.6       |        93.0        |
-|CPU Usage (%)   |       N/A        | Fluctuates  |       ~25        |        ~25         |
-|RAM Usage (MB)  |       N/A        | Fluctuates  |      135000      |       167000       |
+|     Param      | Trans (A100 GPU) (BF16) |     Ipex (BF16)    | Ipex-llm + tcmal (BF16) | Ipex + tcmal + AMX (BF16) |
+|----------------|-------------------------|--------------------|-------------------------|---------------------------|
+|Time/epoch      |            7.5          |         77.6       |           74.8          |            11.6           |
+|Train Epoch     |             8           |          8         |            8            |             8             |
+|Total Train Time|           60.0          |        621.0       |          598.6          |            93.0           |
+|CPU Usage (%)   |            N/A          |     Fluctuates     |           ~25           |            ~25            |
+|RAM Usage (MB)  |            N/A          |     Fluctuates     |          135000         |           167000          |
 
 #### Remarks:
-1. All setups are using BF16.
-2. The unit used for all the time variables is "minutes (mins)."
-3. Time/epoch = Time per epoch (mins)
-4. Train Epoch = Training Epoch
-5. Total Train Time = Total Training Time (mins)
-6. Param = Parameters
-7. Trans = Transformers
-8. Ipex = Ipex-llm
-9. tcmal = tcmalloc
+1. The unit used for all the time variables is "minutes (mins)."
+2. Time/epoch = Time per epoch (mins)
+3. Train Epoch = Training Epoch
+4. Total Train Time = Total Training Time (mins)
+5. Param = Parameters
+6. Trans = Transformers
+7. Ipex = Ipex-llm
+8. tcmal = tcmalloc
 
 
 ## Custom Summarisation Dataset Structure
