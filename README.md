@@ -27,7 +27,24 @@ The GPU fine-tuning process utilizes `NVIDIA A100 GPUs` from Microsoft Azure, wh
    
 The following is our results:
 
-![image](https://github.com/user-attachments/assets/d6a6d718-4a20-4d05-8e5c-7d274707ac0b)
+|     Param      | Trans (A100 GPU) |     Ipex    | Ipex-llm + tcmal | Ipex + tcmal + AMX |
+|----------------|------------------|-------------|------------------|--------------------|
+|Time/epoch      |       7.5        |     77.6    |       74.8       |        11.6        |
+|Train Epoch     |        8         |      8      |        8         |         8          |
+|Total Train Time|       60.0       |    621.0    |      598.6       |        93.0        |
+|CPU Usage (%)   |       N/A        | Fluctuates  |       ~25        |        ~25         |
+|RAM Usage (MB)  |       N/A        | Fluctuates  |      135000      |       167000       |
+
+#### Remarks:
+*1. All setups are using BF16.
+2. The unit used for all the time variables is "minutes (mins)."
+3. Time/epoch = Time per epoch (mins)
+4. Train Epoch = Training Epoch
+5. Total Train Time = Total Training Time (mins)
+6. Param = Parameters
+7. Trans = Transformers
+8. Ipex = Ipex-llm
+9. tcmal = tcmalloc*
 
 
 ## Custom Summarisation Dataset Structure
