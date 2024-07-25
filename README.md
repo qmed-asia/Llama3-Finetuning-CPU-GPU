@@ -25,7 +25,10 @@ The GPU fine-tuning process utilizes `NVIDIA A100 GPUs` from Microsoft Azure, wh
 1. **CPU Setup**: 4th Gen Intel Xeon Scalable Processors (Sapphire Rapids), 512GB DDR4 RAM, 2TB NVMe SSDs.
 2. **GPU Setup**: NVIDIA A100 GPU with 220 GiB memory, 64 GiB temporary disk space, 960 GB NVMe SSDs.
    
-Refer to our paper for detailed hardware specifications and the performance table.
+The following is our results:
+
+![image](https://github.com/user-attachments/assets/d6a6d718-4a20-4d05-8e5c-7d274707ac0b)
+
 
 ## Custom Summarisation Dataset Structure
 The training and validation datasets are loaded as CSV files: `train.csv` and `val.csv`.
