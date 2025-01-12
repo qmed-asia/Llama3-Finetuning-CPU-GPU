@@ -10,7 +10,7 @@
 
 ## Contributors
 - Shamus Sim Zi Yang
-- Goh Man Fye [@manfye]
+- Goh Man Fye [@manfye](https://github.com/manfye)
 - Diong Zi Yu
 - Yap Wei Chung
 
