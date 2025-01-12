@@ -1,5 +1,7 @@
 # Llama3-Finetuning-CPU-GPU
 
+IEEE Link: https://ieeexplore.ieee.org/document/10823619
+
 ## Contributors
 - Shamus Sim Zi Yang
 - Goh Man Fye
