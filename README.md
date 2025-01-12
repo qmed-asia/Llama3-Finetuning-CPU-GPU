@@ -1,6 +1,9 @@
 # Llama3-Finetuning-CPU-GPU
 
+Date of Conference: 30-31 October 2024
 IEEE Link: https://ieeexplore.ieee.org/document/10823619
+DOI: 10.1109/ICECCE63537.2024.10823619
+Date Added to IEEE Xplore: 10 January 2025
 
 ## Contributors
 - Shamus Sim Zi Yang
