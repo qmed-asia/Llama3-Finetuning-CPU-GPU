@@ -9,10 +9,10 @@
 - Date Added to IEEE Xplore: 10 January 2025
 
 ## Contributors
-- Shamus Sim Zi Yang
-- [@manfye](https://github.com/manfye)
-- Diong Zi Yu
-- Yap Wei Chung
+- Shamus Sim Zi Yang [@Shamus](https://github.com/shamussim-ai)
+- Manfye [@manfye](https://github.com/manfye)
+- Diong Zi Yu [@Ziyu](https://github.com/diongzy)
+- Yap Wei Chung [@Rain](https://github.com/YapWeiChung)
 
 This repo contains implementation to the paper, "Enhancing Medical Summarisation with Parameter Efficient Fine Tuning on Local CPUs". [Paper Link]
 
